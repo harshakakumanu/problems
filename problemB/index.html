@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+(function() {
+    var mousePos;
+
+    document.onmousemove = getMouseMove;
+    setInterval(getMousePosition, 500); 
+
+    function getMouseMove(event) {
+        event = event || window.event;  
+        mousePos = {
+            x: event.pageX,
+            y: event.pageY
+        };
+    }
+    function getMousePosition() {
+        var pos = mousePos;
+        var posX = new Array();
+        var posY = new Array();
+        if (!pos) {
+           console.log("No movement");
+        }
+        else {
+            posX.push(pos.x);
+            posY.push(pos.y);
+        }
+    }
+})();
+</script>
+</html>
